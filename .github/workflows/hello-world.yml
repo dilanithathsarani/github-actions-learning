@@ -1,9 +1,12 @@
+# This is a simple GitHub Actions workflow that runs on push to the main and develop branches
+
 name: Hello World Workflow
 
 on:
   push:
     branches: [main, develop]
   workflow_dispatch:
+    
 
 jobs:
   hello:
@@ -33,3 +36,5 @@ jobs:
       
       - name: Print success message
         run: echo "✅ Workflow completed successfully!"
+
+
