@@ -1,0 +1,20 @@
+name: Custom Workflow
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  custom-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run custom script
+        run: |
+          echo "Running custom workflow on develop branch"
+          echo "Current branch: ${{ github.ref }}"
+          echo "Commit message: ${{ github.event.head_commit.message }}"
+          echo "Actor: ${{ github.actor }}"
+
+      - name: Print success message
+        run: echo "✅ Custom workflow completed successfully!"    
